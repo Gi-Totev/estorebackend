@@ -25,12 +25,4 @@ productRouter.get(
   })
 );
 
-productRouter.post(
-  "/seed",
-  expressAsyncHandler(async (req, res) => {
-    const createdProducts = await Product.insertMany(data.products);
-    res.send({ products: createdProducts });
-  })
-);
-
 export default productRouter;
